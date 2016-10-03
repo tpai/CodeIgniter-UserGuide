@@ -1,9 +1,8 @@
 ###########
-Form Helper
+Form 輔助函式
 ###########
 
-The Form Helper file contains functions that assist in working with
-forms.
+Form 輔助函式包含了各種處理表單的相關函式。
 
 .. contents::
   :local:
@@ -108,7 +107,7 @@ The following functions are available:
 				<input type="hidden" name="member_id" value="234" />
 
 
-.. php:function:: form_open_multipart([$action = ''[, $attributes = array()[, $hidden = array()]])
+.. php:function:: form_open_multipart([$action = ''[, $attributes = array()[, $hidden = array()]]])
 
 	:param	string	$action: Form action/target URI string
 	:param	array	$attributes: HTML attributes
@@ -187,7 +186,7 @@ The following functions are available:
 			<input type="hidden" name="email" value="john@example.com" id="hiddenemail" class="hiddenemail" />
 		*/
 
-.. php:function:: form_input([$data = ''[, $value = ''[, $extra = '']])
+.. php:function:: form_input([$data = ''[, $value = ''[, $extra = '']]])
 
 	:param	array	$data: Field attributes data
 	:param	string	$value: Field value
@@ -399,7 +398,7 @@ The following functions are available:
 	:param	string	$extra: Anything to append after the closing tag, *as is*
 	:returns:	An HTML fieldset closing tag
 	:rtype:	string
-	
+
 
 	Produces a closing </fieldset> tag. The only advantage to using this
 	function is it permits you to pass data to it which will be added below
@@ -448,7 +447,7 @@ The following functions are available:
 	fourth parameter::
 
 		$js = 'onClick="some_function()"';
-		echo form_checkbox('newsletter', 'accept', TRUE, $js)
+		echo form_checkbox('newsletter', 'accept', TRUE, $js);
 
 
 .. php:function:: form_radio([$data = ''[, $value = ''[, $checked = FALSE[, $extra = '']]]])

@@ -9,7 +9,7 @@
 
 我們將資料庫操作放在模型裡面，而不是控制器當中，這樣子方便我們之後重用這些程式。 模型是你用來讀取、新增以及更新資訊的地方，不論是從資料庫或其它存放資料處。它們代表著你的資料。
 
-打開 application/models 資料夾，新增一個檔案名為 news_model.php 並加上下列程式碼。 確認你正確的設定了你的資料庫，就像 `這份文件 <../database/configuration.html>`_. 裡所描述的那樣。
+打開 application/models 資料夾，新增一個檔案名為 News_model.php 並加上下列程式碼。 確認你正確的設定了你的資料庫，就像 `這份文件 <../database/configuration.html>`_. 裡所描述的那樣。
 
 
 ::
@@ -27,6 +27,11 @@
 
 在你存取資料庫之前，需要先建立資料庫結構。連線到你的資料庫並執行下列 SQL 命令。順便增加一些種子資料。
 
+建立資料庫:
+::
+	CREATE database News;
+
+資料庫結構:
 ::
 
 	CREATE TABLE news (
@@ -37,6 +42,11 @@
 		PRIMARY KEY (id),
 		KEY slug (slug)
 	);
+	
+種子資料:
+::
+	INSERT INTO `News`.`news` (`id`, `title`, `slug`, `text`) VALUES (NULL, 'Write Like You Talk', 'false', 'Here's a simple trick for getting more people to read what you write: write in spoken language. Something comes over most people when they start writing. They write in a different language than they'd use if they were talking to a friend. The sentence structure and even the words are different. No one uses "pen" as a verb in spoken English. You'd feel like an idiot using "pen" instead of "write" in a conversation with a friend.');
+	INSERT INTO `News`.`news` (`id`, `title`, `slug`, `text`) VALUES (NULL, 'A decade at google', 'true', 'One of the key challenges you face in an industrial research lab is how to choose your projects. You want your projects to be interesting research but also contribute to your company. As a junior researcher, you’re typically in the situation of choosing a project to join, while later in your career you are expected to come up with and lead your own projects. Regardless of your age, you have to make an educated decision.');
 
 現在資料庫與模型已經設定好了，你需要一個方法來取得資料庫中的所有文章。我們使用 CodeIgniter 內建的資料庫抽象層 — `Query Builder <../database/query_builder.html>`_ — 來做這件事。 這使你可以只寫一次查詢，就能夠在 `所有支援的資料庫執行 <../general/requirements.html>`_ 。請將以下程式碼加進你的模型。
 
@@ -59,7 +69,7 @@
 顯示新聞
 ----------------
 
-我們已經寫好查詢，現在模型應該要連結到用來顯示新聞給使用者的檢視。這可以在我們之前做的控制器中完成，但為了清楚起見，我們來定義一個新的 "news" 控制器。 在 application/controllers/news.php 建立新的控制器。
+我們已經寫好查詢，現在模型應該要連結到用來顯示新聞給使用者的檢視。這可以在我們之前做的控制器中完成，但為了清楚起見，我們來定義一個新的 "news" 控制器。 在 application/controllers/News.php 建立新的控制器。
 
 ::
 
@@ -105,7 +115,7 @@
 ::
 
 	<h2><?php echo $title ?></h2>
-	
+
 	<?php foreach ($news as $news_item): ?>
 
 		<h3><?php echo $news_item['title'] ?></h3>
@@ -116,7 +126,7 @@
 
 	<?php endforeach ?>
 
-這邊我們輪詢每個新聞項目並顯示給使用者。你可以看到我們用 PHP 混合了 HTML 做成模板。 如果你喜歡使用模板語言，你可以使用 CodeIgniter 的 `模板解析器 <../libraries/parser>`_ 或其它第三方解析器。
+這邊我們輪詢每個新聞項目並顯示給使用者。你可以看到我們用 PHP 混合了 HTML 做成模板。 如果你喜歡使用模板語言，你可以使用 CodeIgniter 的 `模板解析器 <../libraries/parser.html>`_ 或其它第三方解析器。
 
 新聞總覽頁面現在已經完成了，但是還缺了一個頁面用來顯示個別的新聞。剛剛建立的模型設計成可以輕易的達成這個功能。 你只需要在控制器增加一些程式並新增一個檢視。回到 news 控制器並更新方法 ``view()`` 加入下列程式碼。
 

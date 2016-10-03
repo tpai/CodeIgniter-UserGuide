@@ -18,9 +18,9 @@
 * [x] <del>Benchmarking Class</del>
 * [x] <del>Caching Driver</del>
 * [x] <del>Calendaring Class</del>
-* [x] <del>Shopping Cart Class</del> 
-* [x] <del>Config Class</del> 
-* [x] <del>Email Class</del> 
+* [x] <del>Shopping Cart Class</del>
+* [x] <del>Config Class</del>
+* [x] <del>Email Class</del>
 * [ ] Encrypt Class
 * [ ] Encryption Library
 * [ ] File Uploading Class
@@ -37,7 +37,7 @@
 * [ ] Template Parser Class
 * [ ] Security Class
 * [ ] Session Driver
-* [ ] HTML Table Class
+* [x] <del>HTML Table Class</del>
 * [x] <del>Trackback Class</del>
 * [x] <del>Typography Class</del>
 * [x] <del>Unit Testing Class</del>
@@ -63,7 +63,7 @@
 * [x] <del>Array Helper</del>
 * [x] <del>CAPTCHA Helper</del>
 * [x] <del>Cookie Helper</del>
-* [ ] Date Helper
+* [x] <del>Date Helper</del>
 * [ ] Directory Helper
 * [ ] Download Helper
 * [ ] Email Helper
@@ -71,7 +71,7 @@
 * [ ] Form Helper
 * [ ] HTML Helper
 * [ ] Inflector Helper
-* [ ] Language Helper
+* [x] <del>Language Helper</del>
 * [ ] Number Helper
 * [ ] Path Helper
 * [ ] Security Helper

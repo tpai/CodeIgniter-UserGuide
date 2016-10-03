@@ -1,8 +1,8 @@
 ##########
-URL Helper
+URL 輔助函式
 ##########
 
-The URL Helper file contains functions that assist in working with URLs.
+URL 輔助函式包含了各種處理 URL 網址的相關函式。
 
 .. contents::
   :local:
@@ -18,10 +18,10 @@ This helper is loaded using the following code::
 
 	$this->load->helper('url');
 
-The following functions are available:
-
 Available Functions
 ===================
+
+The following functions are available:
 
 .. php:function:: site_url([$uri = ''[, $protocol = NULL]])
 
@@ -277,7 +277,7 @@ Available Functions
 
 	:param	string	$str: Input string
 	:param	string	$separator: Word separator
-	:param	string	$lowercase: Whether to transform the output string to lower-case
+	:param	bool	$lowercase: Whether to transform the output string to lower-case
 	:returns:	URL-formatted string
 	:rtype:	string
 
@@ -360,7 +360,7 @@ Available Functions
 		is outputted to the browser since it utilizes server headers.
 
 	.. note:: For very fine grained control over headers, you should use the
-		`Output Library </libraries/output>` ``set_header()`` method.
+		:doc:`Output Library </libraries/output>` ``set_header()`` method.
 
 	.. note:: To IIS users: if you hide the `Server` HTTP header, the *auto*
 		method won't detect IIS, in that case it is advised you explicitly

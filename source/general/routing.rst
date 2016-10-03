@@ -86,7 +86,7 @@ URI 路由
 
 在上例中，一個像 products/shirts/123 的 URL 會轉而呼叫“shirts”控制器（Controller）類別及 id_123 函數。
 
-使用正規表達式，你也可以擷取斜線（'/'）中間的片段，這個代表中間多段的分隔符號。
+使用正規表達式，你也可以一次分隔多個區段的內容。
 
 例如，如果使用者想存取你的 Web 應用程式被保護區域的密碼，在登入之後，你希望重導向它們回其他頁面，
 你可以參考以下有用的範例： ::
@@ -144,8 +144,9 @@ DELETE 請求到 URL“products”第一個片段，數字在第二個片段將�
 	$route['404_override'] = '';
 
 這個路由指定控制器類別應該被載入，如果請求控制器找不到的時候。
-它將會複寫 404 錯誤頁面。它將不會影響 ``show_404()`` 函數，這個將會
-連續載入預設 *error_404.php* 檔案在
+它將會複寫預設的 404 錯誤頁面。
+Same per-directory rules as with 'default_controller' apply here as well.
+這不會影響 ``show_404()`` 函數，將依舊載入預設 *error_404.php* 檔案在
 *application/views/errors/error_404.php* 。
 
 
